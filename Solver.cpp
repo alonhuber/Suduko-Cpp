@@ -10,6 +10,11 @@ Solver::Solver()
 
 Solver::~Solver()
 {
+	for (auto& line : m_grid)
+	{		
+		for (auto& square : line)
+			delete square;
+	}
 }
 
 bool Solver::solve(std::string path, std::string outputPath)
